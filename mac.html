@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <header>
+        <h1>Raccourcis Clavier Windows</h1>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Rechercher un raccourci..." id="searchBox">
+        </div>
+    </header>
+    <nav>
+        <a href="v4 avec barre de recherche.html" class="B1">Windows</a>
+        <a href="home.html" class="B1">home</a>
+    </nav>
+    <main>
+        <h2>Raccourcis Windows</h2>
+        <ul id="shortcutsList">
+            <li><strong>Ctrl + C :</strong> Copier - Copie le contenu sélectionné.</li>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchBox = document.getElementById('searchBox');
+        const shortcutsList = document.getElementById('shortcutsList');
+        const shortcuts = shortcutsList.getElementsByTagName('li');
+
+        searchBox.addEventListener('input', function() {
+            const searchTerm = searchBox.value.trim().toLowerCase();
+
+            for (let i = 0; i < shortcuts.length; i++) {
+                const shortcut = shortcuts[i];
+                const shortcutText = shortcut.textContent.trim().toLowerCase();
+                if (shortcutText.includes(searchTerm)) {
+                    shortcut.style.display = 'block';
+                } else {
+                    shortcut.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
+</html>

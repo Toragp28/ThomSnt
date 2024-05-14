@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Raccourcis Clavier Windows</h1>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Rechercher un raccourci..." id="searchBox">
+        </div>
+    </header>
+    <nav>
+        <a href="mac.html" class="B1">Mac</a>
+        <a href="home.html" class="B1">home</a>
+    </nav>
+    <main>
+        <h2>Raccourcis Windows</h2>
+        <ul id="shortcutsList">
+            <li><strong>Ctrl + C :</strong> Copier - Copie le contenu sélectionné.</li>
+            <li><strong>Ctrl + X :</strong> Couper - Coupe le contenu sélectionné.</li>
+            <li><strong>Ctrl + V :</strong> Coller - Colle le contenu copié/coupé.</li>
+            <li><strong>Ctrl + Z :</strong> Annuler - Annule la dernière action.</li>
+            <li><strong>Ctrl + Y :</strong> Rétablir - Rétablit la dernière action annulée.</li>
+            <li><strong>Alt + Tab :</strong> Basculer entre les applications ouvertes.</li>
+            <li><strong>Windows + D :</strong> Afficher le bureau.</li>
+            <li><strong>Windows + E :</strong> Ouvrir l'Explorateur de fichiers.</li>
+            <li><strong>Alt + F4 :</strong> Fermer la fenêtre active.</li>
+            <li><strong>Ctrl + Shift + Esc :</strong> Ouvrir le Gestionnaire des tâches.</li>
+            <li><strong>Windows + L :</strong> Verrouiller l'ordinateur.</li>
+            <li><strong>Alt + F :</strong> Afficher le menu Fichier dans certaines applications.</li>
+            <li><strong>Ctrl + Shift + N :</strong> Créer un nouveau dossier.</li>
+            <li><strong>Windows + R :</strong> Ouvrir la boîte de dialogue Exécuter.</li>
+            <li><strong>Alt + Entrée :</strong> Afficher les propriétés de l'élément sélectionné.</li>
+            <li><strong>Ctrl + Shift + F :</strong> Rechercher des ordinateurs sur un réseau.</li>
+            <li><strong>Alt + Flèche gauche/droite :</strong> Aller en arrière/avant dans certaines applications.</li>
+            <li><strong>Ctrl + P :</strong> Imprimer le document actif.</li>
+            <li><strong>Alt + Espace :</strong> Afficher le menu contextuel de la fenêtre active.</li>
+            <li><strong>Shift + Suppr :</strong> Supprimer définitivement l'élément sélectionné sans le placer dans la Corbeille.</li>
+            <li><strong>Alt + Maj :</strong> Basculer entre les langues de saisie (si plusieurs langues sont installées).</li>
+            <li><strong>Ctrl + A :</strong> Sélectionner tout le contenu dans une fenêtre ou un champ de texte.</li>
+            <li><strong>Alt + Impr écran :</strong> Capturer uniquement la fenêtre active.</li>
+            <li><strong>Alt + F5 :</strong> Actualiser la fenêtre active.</li>
+            <li><strong>Ctrl + Alt + Suppr :</strong> Afficher l'écran de sécurité de Windows (pour verrouiller l'ordinateur, changer d'utilisateur, etc.).</li>
+            <li><strong>Alt + Maj + Tab :</strong> Basculer entre les applications ouvertes dans l'ordre inverse.</li>
+            <li><strong>Ctrl + Esc :</strong> Ouvrir le menu Démarrer.</li>
+            <li><strong>Alt + E :</strong> Ouvrir le menu Édition dans certaines applications.</li>
+            <li><strong>Ctrl + D :</strong> Supprimer l'élément sélectionné et le placer dans la Corbeille.</li>
+            <li><strong>Windows + Pause :</strong> Ouvrir les propriétés système.</li>
+            <li><strong>Ctrl + N :</strong> Ouvrir une nouvelle fenêtre dans l'explorateur de fichiers.</li>
+            <li><strong>Ctrl + S :</strong> Enregistrer le document actif.</li>
+            <li><strong>Ctrl + O :</strong> Ouvrir un fichier.</li>
+            <li><strong>Ctrl + F :</strong> Rechercher du texte dans le document actif.</li>
+            <li><strong>Ctrl + H :</strong> Remplacer du texte dans le document actif.</li>
+            <li><strong>Ctrl + E :</strong> Sélectionner la barre de recherche dans l'explorateur de fichiers.</li>
+            <li><strong>Alt + Espace + N :</strong> Minimiser la fenêtre active.</li>
+            <li><strong>Alt + Espace + X :</strong> Maximiser la fenêtre active.</li>
+            <li><strong>Alt + Espace + R :</strong> Restaurer la fenêtre active.</li>
+            <li><strong>Ctrl + Flèche gauche/droite :</strong> Déplacer le curseur d'un mot à gauche/droite.</li>
+            <li><strong>Ctrl + Flèche haut/bas :</strong> Déplacer le curseur d'une ligne vers le haut/bas.</li>
+            <li><strong>Shift + Flèche gauche/droite :</strong> Sélectionner du texte lettre par lettre.</li>
+            <li><strong>Shift + Flèche haut/bas :</strong> Sélectionner du texte ligne par ligne.</li>
+            <li><strong>Ctrl + Shift + Flèche gauche/droite :</strong> Sélectionner du texte mot par mot vers la gauche/droite.</li>
+        </ul>
+    </main>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchBox = document.getElementById('searchBox');
+        const shortcutsList = document.getElementById('shortcutsList');
+        const shortcuts = shortcutsList.getElementsByTagName('li');
+
+        searchBox.addEventListener('input', function() {
+            const searchTerm = searchBox.value.trim().toLowerCase();
+
+            for (let i = 0; i < shortcuts.length; i++) {
+                const shortcut = shortcuts[i];
+                const shortcutText = shortcut.textContent.trim().toLowerCase();
+                if (shortcutText.includes(searchTerm)) {
+                    shortcut.style.display = 'block';
+                } else {
+                    shortcut.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
+</html>

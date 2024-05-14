@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #555;
+}
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative; /* Position relative pour l'animation */
+    top: -100px; /* Déplacer l'élément en dehors de la vue */
+    transition: top 1s ease; /* Animation de transition */
+}
+header.visible {
+    top: 0;
+}
+
+#text {
+    font-size: 1px; /* Taille de la police initiale très petite */
+    opacity: 0; /* Texte initiallement invisible */
+    animation: pixelate 5s forwards; /* Animation de pixelation */
+}
+
+@keyframes pixelate {
+    0% {
+        font-size: 1px;
+    }
+    100% {
+        font-size: 20px; /* Taille de la police finale */
+        opacity: 1; /* Texte devenant visible */
+    }
+}
